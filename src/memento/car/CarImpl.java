@@ -18,6 +18,10 @@ public class CarImpl implements Originator {
         this.doors = doors;
     }
 
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
     @Override
     public Memento save() {
         return new CarMementoImpl(this.color, this.licensePlate, this.ownerName, this.horsePower, this.seats, this.doors);
@@ -37,4 +41,15 @@ public class CarImpl implements Originator {
         System.out.println("Car recovered to previous state.");
     }
 
+    @Override
+    public String toString() {
+        return "CarImpl{" +
+                "color='" + color + '\'' +
+                ", licensePlate='" + licensePlate + '\'' +
+                ", ownerName='" + ownerName + '\'' +
+                ", horsePower=" + horsePower +
+                ", seats=" + seats +
+                ", doors=" + doors +
+                '}';
+    }
 }
